@@ -26,7 +26,7 @@ func getNoteData() (string, string, error) {
 	if err != nil {
 		return "", "", err
 	}
-
+	// returns the title and content
 	return title, content, nil
 }
 
