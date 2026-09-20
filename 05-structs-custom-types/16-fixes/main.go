@@ -15,7 +15,7 @@ func main() {
 	userNote, err := note.New(title, content)
 
 	if err != nil {
-		fmt.Print(err)
+		fmt.Println(err)
 		return
 	}
 
@@ -23,22 +23,22 @@ func main() {
 	err = userNote.Save()
 
 	if err != nil {
-		fmt.Print("Saving note not succceeded")
+		fmt.Println("Saving the note failed.")
+		return
 	}
 
-	fmt.Print("Saving note succeeded!")
+	fmt.Println("Saving the note succeeded!")
 }
 
 func getNoteData() (string, string) {
-	title := getUserInput("Enter note title: ")
-	content := getUserInput("Enter note content: ")
+	title := getUserInput("Note title:")
+	content := getUserInput("Note content:")
 
 	return title, content
-
 }
 
 func getUserInput(prompt string) string {
-	fmt.Printf("%v", prompt)
+	fmt.Printf("%v ", prompt)
 
 	reader := bufio.NewReader(os.Stdin)
 
